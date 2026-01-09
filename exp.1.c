@@ -1,30 +1,23 @@
-#include<stdio.h>
-void main() {
-	int a[20], i, n, key, flag = 0, pos;
+#include <stdio.h>
 
-	scanf("%d", &n);
+int main() {
+    int arr[] = {10, 20, 30, 40, 50};
+    int size = 5;
+    int key = 30;
+    int found = -1;
 
-	for(i=0; i<n; i++)
-		{
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == key) {
+            found = i;
+            break;
+        }
+    }
 
-			scanf("%d",&a[i]);
-		}
+    if (found != -1) {
+        printf("Element found at index %d\n", found);
+    } else {
+        printf("Element not found\n");
+    }
 
-	scanf("%d", &key);
-
-	for(i=0; i<n; i++)
-		{
-	if(a[i] == key ) {
-		pos=i;
-		flag=1;
-		
-	}
-		
-
-	}
-	if (flag == 1) {
-		printf("found at position %d\n", pos);
-	} else {
-		printf("%d not found\n", key);
-	}
+    return 0;
 }
